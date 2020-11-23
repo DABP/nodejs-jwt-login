@@ -24,7 +24,6 @@ User.statics.findOneByUsername = function(username) {
     }).exec()
 }
 
-
 // verify the password of the User documment
 User.methods.verify = function(password) {
     return this.password === password
@@ -32,6 +31,7 @@ User.methods.verify = function(password) {
 
 User.methods.assignAdmin = function() {
     this.admin = true
+    console.log(this)
     return this.save()
 }
 
